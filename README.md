@@ -7,7 +7,7 @@ Purposes of this project is to find strengths and weaknesses of over the http di
 * Long story short, one has list of functions that have one input parameter written in javascript.
 * Then, for each function one has list of parameters with which one wants to call that same function. 
 * Those functions and input parametes are then sent to clients that go to this web site.
-* When sent, those functions are then exicuted with those input parameter.
+* When sent, those functions are then execute with those input parameter.
 * When processed, the return value of the function is then sent back to the server.
 * The process from step 3 to step 5 is repeated as long as there are unprocessed input parameter.
 

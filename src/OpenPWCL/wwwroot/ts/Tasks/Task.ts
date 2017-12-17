@@ -1,11 +1,11 @@
-class Task{
-    public status : "running" | "finished" | "thrown" | "notStarted" | "notDeffined";
+class Task {
+    public status: "running" | "finished" | "thrown" | "notStarted" | "notDeffined";
     public func: (input: any) => any;
-    public onDefined: (task: Task) => void; 
-    public onStarted: (task: Task) => void; 
-    public onFinished: (task: Task) => void; 
-    public onError: (task: Task) => void; 
-    public onStateChange: (task: Task) => void; 
+    public onDefined: (task: Task) => void;
+    public onStarted: (task: Task) => void;
+    public onFinished: (task: Task) => void;
+    public onError: (task: Task) => void;
+    public onStateChange: (task: Task) => void;
     public constructor(func?: (input: any) => any) {
         this.status = "notDeffined";
         if (func !== undefined) {
@@ -15,16 +15,15 @@ class Task{
                 this.onDefined(this);
                 this.onStateChange(this);
             } catch{
-
             }
         }
     }
-    public run(input: any) : any | undefined {
+    public run(input: any): any | undefined {
         this.status = "running";
         try {
             this.onStateChange(this);
             this.onStarted(this);
-        } catch{}
+        } catch{ }
 
         try {
             var val = this.func(input);
@@ -32,9 +31,9 @@ class Task{
             try {
                 this.onStateChange(this);
                 this.onFinished(this);
-            } catch{}
+            } catch{ }
             return val;
-        }catch {
+        } catch {
             this.status = "thrown";
             try {
                 this.onStateChange(this);

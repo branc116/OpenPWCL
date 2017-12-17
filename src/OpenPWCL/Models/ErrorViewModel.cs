@@ -1,5 +1,3 @@
-using System;
-
 namespace OpenPWCL.Models
 {
     public class ErrorViewModel

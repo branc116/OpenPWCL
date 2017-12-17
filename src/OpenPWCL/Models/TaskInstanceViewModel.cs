@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OpenPWCL.Models
 {
@@ -12,8 +9,7 @@ namespace OpenPWCL.Models
         public string InputParamsJsno { get; set; }
     }
 
-    public class ToTypescriptAttribute: Attribute
+    public class ToTypescriptAttribute : Attribute
     {
-
     }
 }

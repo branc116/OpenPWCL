@@ -6,7 +6,6 @@ define( [
 	"./getAll",
 	"./setGlobalEval"
 ], function( jQuery, rtagName, rscriptType, wrapMap, getAll, setGlobalEval ) {
-
 "use strict";
 
 var rhtml = /<|&#?\w+;/;
@@ -22,10 +21,8 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 		elem = elems[ i ];
 
 		if ( elem || elem === 0 ) {
-
 			// Add nodes directly
 			if ( jQuery.type( elem ) === "object" ) {
-
 				// Support: Android <=4.0 only, PhantomJS 1 only
 				// push.apply(_, arraylike) throws on ancient WebKit
 				jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
@@ -67,7 +64,6 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 	i = 0;
 	while ( ( elem = nodes[ i++ ] ) ) {
-
 		// Skip elements already in the context collection (trac-4087)
 		if ( selection && jQuery.inArray( elem, selection ) > -1 ) {
 			if ( ignored ) {

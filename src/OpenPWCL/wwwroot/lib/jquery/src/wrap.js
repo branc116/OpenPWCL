@@ -4,7 +4,6 @@ define( [
 	"./manipulation", // clone
 	"./traversing" // parent, contents
 ], function( jQuery ) {
-
 "use strict";
 
 jQuery.fn.extend( {
@@ -50,7 +49,6 @@ jQuery.fn.extend( {
 
 			if ( contents.length ) {
 				contents.wrapAll( html );
-
 			} else {
 				self.append( html );
 			}

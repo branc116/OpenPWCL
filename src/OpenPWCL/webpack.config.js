@@ -10,5 +10,4 @@ module.exports = {
             jquery: "./wwwroot/lib/jquery/dist/jquery.min.js"
         }
     }
-    
 };

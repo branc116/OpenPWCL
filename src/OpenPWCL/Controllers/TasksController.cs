@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using OpenPWCL.Data;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using OpenPWCL.Data;
-using OpenPWCL.Models;
-using Newtonsoft.Json;
 
 namespace OpenPWCL.Controllers
 {
@@ -52,7 +49,7 @@ namespace OpenPWCL.Controllers
         }
 
         // POST: Tasks/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -85,7 +82,7 @@ namespace OpenPWCL.Controllers
         }
 
         // POST: Tasks/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -147,6 +144,7 @@ namespace OpenPWCL.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
         [HttpPost]
         public async Task<IActionResult> AddTaskInstances(Guid id, string InputParams, Guid TaskId)
         {
@@ -158,7 +156,6 @@ namespace OpenPWCL.Controllers
             var tasks = await _context.Tasks
                 .Include(i => i.TaskInstances)
                 .SingleOrDefaultAsync(m => m.Id == TaskId);
-            
 
             if (tasks == null)
             {
@@ -177,6 +174,7 @@ namespace OpenPWCL.Controllers
             await _context.SaveChangesAsync();
             return View("Details", tasks);
         }
+
         [HttpGet]
         public async Task<JsonResult> GetTaskToSolve()
         {
@@ -186,7 +184,8 @@ namespace OpenPWCL.Controllers
                 .FirstOrDefaultAsync(i => i.TaskInstances
                     .Any(j => !j.Finished));
             return Json(best);
-        } 
+        }
+
         private bool TasksExists(Guid id)
         {
             return _context.Tasks.Any(e => e.Id == id);

@@ -5,6 +5,4 @@ module.exports = {
     output: {
         filename: "./wwwroot/js/dist/bundle.js"
     }
-
 };
-

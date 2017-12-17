@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OpenPWCL.Data;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace OpenPWCL.Controllers
 {
@@ -49,7 +47,7 @@ namespace OpenPWCL.Controllers
         }
 
         // POST: TaskInstances/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -82,7 +80,7 @@ namespace OpenPWCL.Controllers
         }
 
         // POST: TaskInstances/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -144,6 +142,7 @@ namespace OpenPWCL.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
         [HttpGet]
         public JsonResult GetTaskInstance(Guid taskId)
         {
@@ -154,6 +153,7 @@ namespace OpenPWCL.Controllers
                 .FirstOrDefault(i => !i.Finished);
             return Json(instance);
         }
+
         //POST: TaskInstances/TaskInstaceSolved/5
         [HttpPost]
         public JsonResult TaskInstanceSolved([FromRoute]Guid id, [FromQuery]string result)

@@ -4,7 +4,6 @@ define( [
 	"./var/rneedsContext",
 	"../selector"
 ], function( jQuery, indexOf, rneedsContext ) {
-
 "use strict";
 
 var risSimple = /^.[^:#\[\.,]*$/;
@@ -102,5 +101,4 @@ jQuery.fn.extend( {
 		).length;
 	}
 } );
-
 } );

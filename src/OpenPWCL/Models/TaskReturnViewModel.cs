@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OpenPWCL.Models
 {
@@ -12,8 +9,8 @@ namespace OpenPWCL.Models
         public Guid TaskInstanceId { get; set; }
         public string ReturnJson { get; set; }
         public Status Status { get; set; }
-        
     }
+
     [ToTypescript]
     [Flags]
     public enum Status
