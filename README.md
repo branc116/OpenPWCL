@@ -42,4 +42,4 @@ Processed instances of ones function.
 * Mail: rickobranimir@gmail.com
  
 ### License
-This project is licensed under [MIT License](LICENSE.md)
+This project is licensed under [MIT License](LICENSE)
