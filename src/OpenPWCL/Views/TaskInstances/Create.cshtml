@@ -1,0 +1,10 @@
+﻿@model OpenPWCL.Data.TaskInstance
+
+<div class="row">
+    <div id="myParams" class="monaco-editor vs" style="width:800px;height:600px;border:1px solid grey"></div>
+    <form id="addTaskInstances" asp-action="AddTaskInstances" method="post" asp-antiforgery="true">
+        <input name="InputParams" class="form-control" type="hidden" id="InputParams" />
+        <input asp-for="TaskId" value="@Model.TaskId" type="hidden" />
+        <button type="submit" class="btn btn-default" >Add</button>
+    </form>
+</div>

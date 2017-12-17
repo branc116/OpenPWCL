@@ -1,0 +1,30 @@
+{
+  "name": "OpenPWCL",
+  "version": "1.0.0",
+  "description": "making distribute computing with mvc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/branc116/os.git"
+  },
+  "keywords": [
+    "multithread",
+    "distributed",
+    "processing"
+  ],
+  "author": "Branimir Ričko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/branc116/os/issues"
+  },
+  "homepage": "https://github.com/branc116/os#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jquery": "3.2.17",
+    "@types/jqueryui": "1.11.37",
+    "@types/bootstrap": "3.3.36"
+  }
+}

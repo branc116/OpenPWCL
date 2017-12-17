@@ -1,0 +1,6 @@
+﻿[
+  {
+    "outputFile": "./wwwroot/js/dist/bundle.js",
+    "inputFile": "./wwwroot/js/Tasks/TaskInit.js"
+  }
+]

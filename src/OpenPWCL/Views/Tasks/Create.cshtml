@@ -1,0 +1,62 @@
+﻿@model OpenPWCL.Data.Tasks
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h2>Create</h2>
+
+<h4>Tasks</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="createId" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Priority" class="control-label"></label>
+                <input asp-for="Priority" class="input" />
+            </div>
+            <div class="form-group">
+                <label asp-for="JavascriptCode" class="control-label"></label>
+                <input asp-for="JavascriptCode" id="myCodeInput" type="hidden" /> 
+                <div asp-for="JavascriptCode" id="myCode" class="monaco-editor vs" style="width:800px;height:600px;border:1px solid grey" >
+                    
+                </div>
+                <span asp-validation-for="JavascriptCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/monaco-editor/min/vs/loader.js"></script>
+    <script>
+        require.config({ paths: { 'vs': '/lib/monaco-editor/min/vs' } });
+        require(['vs/editor/editor.main'], function () {
+            var editor = monaco.editor.create(document.getElementById('myCode'), {
+                value: `
+(a) => {
+    //wite code
+}
+                       `,
+                language: 'javascript'
+            });
+            $("#createId").submit((e) => {
+                let lines = monaco.editor.getModels()[0]._lines;
+                let outStr = "";
+                console.log(lines); 
+                for (let i = 0; i < lines.length;i++){
+                    outStr += lines[i]._text + "\n";
+                }
+                $("#myCodeInput").get(0).setAttribute("value", outStr);
+            })
+        });
+        
+    </script>
+}
