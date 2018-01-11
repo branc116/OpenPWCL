@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "jquery": "3.2.1",
-    "monaco-editor": "monaco-editor-minified#v1.0.0"
+    "monaco-editor": "monaco-editor-minified#v1.0.0",
+    "fast-sha256": "v1.1.0"
   }
 }

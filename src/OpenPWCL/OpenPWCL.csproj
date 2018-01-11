@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\ts\Demo\hash.js" />
+    <Content Remove="wwwroot\ts\Demo\HashFinder.ts" />
     <Content Remove="wwwroot\ts\Tasks\TaskInit.ts" />
     <Content Remove="wwwroot\ts\Tasks\TaskManager.ts" />
   </ItemGroup>
@@ -20,6 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\js\ts\Demo\hash.js" />
+    <TypeScriptCompile Include="wwwroot\ts\Demo\HashFinder.ts" />
     <TypeScriptCompile Include="wwwroot\ts\Tasks\TaskInit.ts" />
     <TypeScriptCompile Include="wwwroot\ts\Tasks\TaskManager.ts" />
   </ItemGroup>

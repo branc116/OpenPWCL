@@ -1,0 +1,40 @@
+{
+  "name": "fast-sha256",
+  "version": "1.1.0",
+  "authors": [
+    "Dmitry Chestnykh <dmitry@codingrobots.com>"
+  ],
+  "description": "SHA-256, HMAC and PBKDF2 implementation with typed arrays for modern browsers and Node.js",
+  "main": "sha256.js",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "hash",
+    "sha256",
+    "pbkdf2",
+    "cryptography",
+    "crypto",
+    "hmac"
+  ],
+  "license": "Public domain",
+  "homepage": "https://github.com/dchest/fast-sha256-js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "build"
+  ],
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.0",
+    "commit": "1b4e9678abf0d36b50c98f4b4fbee2ce6499a2a0"
+  },
+  "_source": "https://github.com/dchest/fast-sha256-js.git",
+  "_target": "v1.1.0",
+  "_originalSource": "fast-sha256",
+  "_direct": true
+}
